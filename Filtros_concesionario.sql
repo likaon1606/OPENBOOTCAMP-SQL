@@ -38,6 +38,18 @@ GROUP BY m.name;
 
 
 -- Modelo más vendido
+SELECT * FROM vehicle;
+SELECT * FROM model;
+SELECT * FROM sale;
+
+SELECT * FROM sale s
+INNER JOIN vehicle v ON s.id_vehicle = v.id
+INNER JOIN model m ON v.id_model = m.id
+
+SELECT m.name, COUNT(s.id) FROM sale s
+INNER JOIN vehicle v ON s.id_vehicle = v.id
+INNER JOIN model m ON v.id_model = m.id
+GROUP BY m.name;
 
 -- Versión más vendido
 
